@@ -1,0 +1,139 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+body{
+    padding: 10px 15px 1.5em;
+    background: #ddd;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
+    font-family: Helvetica, sans-serif;
+    color: #76665e;
+}
+@media screen and (max-width: 768px){
+    body{
+        font-size: 22px;
+        line-height: 1.2;
+    }
+}
+a{
+    color: #76665e;
+    text-decoration: none;
+}
+a:hover{
+    color: #76665e;
+}
+h1, p{
+    font-size: 1em;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0;
+    cursor: default;
+}
+figure{
+    margin: 0;
+}
+
+/*
+* SWIPER
+*/
+
+/*Container*/
+.swiper-container{
+    height: 600px;
+    width: 100%;
+    margin: .4em 0;
+    cursor: grab;  
+    overflow: visible  !important;
+}
+@media screen and (max-width:768px){
+    .swiper-container{
+        height: 60vw;
+        max-height: 80vh;
+        margin: 1em 0 1.5em;
+    }
+}
+.swiper-container:active{
+    cursor: grabbing;
+}
+/*Wrapper*/
+.swiper-wrapper{
+    height: 100%;
+    width: 100%; 
+}
+/*Slider*/
+.swiper-wrapper .swiper-slide{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: auto;
+    background: #bfbfbf;    
+    overflow: visible;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+.swiper-wrapper .swiper-slide > img{
+    height: 100%;
+    width: auto;
+    transition: 1.5s opacity;
+}
+
+img.filter{
+    filter: grayscale(1);
+    mix-blend-mode: screen;
+}
+
+.swiper-wrapper .swiper-slide > p{
+    position: absolute;
+    font-size: .7em;
+    top: 105%;
+    top: calc(100% + 10px);
+    max-width: 98vw;
+    max-width: calc(100vw - 30px);
+}
+@media screen and (max-width:768px){
+    .swiper-wrapper .swiper-slide > p{
+        font-size: .85em;
+    }
+}
+
+.swiper-nav > .swiper-button-prev{
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    width: calc(50% + 15px);
+    cursor: url('img/arrow-left.png'), auto;
+    opacity: 0;
+}
+
+.swiper-nav > .swiper-button-next{
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: -30px;
+    height: 100%;
+    width: 50%;
+    width: calc(50% + 15px);
+    cursor: url('img/arrow-right.png'), auto;
+    opacity: 0;
+}
+
+.swiper-nav > .swiper-button-next::after,
+.swiper-nav > .swiper-button-prev::after{
+    content: "";
+}
+
+.swiper-nav > .swiper-button-next,
+.swiper-nav > .swiper-button-prev,
+.swiper-nav > .swiper-button-next:active,
+.swiper-nav > .swiper-button-prev:active{
+    outline: none;
+}
